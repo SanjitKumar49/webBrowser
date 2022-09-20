@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private EditText urlET;
-    private ImageView insta,fs,yt;
+    private ImageView insta,fs,whatsapp,github,twitter,youtube;
 
 
     @Override
@@ -26,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
         urlET=findViewById(R.id.serch);
         insta=findViewById(R.id.instagram);
         fs=findViewById(R.id.facebook);
-        yt=findViewById(R.id.youtube);
+        whatsapp=findViewById(R.id.whatsapp);
+        github=findViewById(R.id.github);
+        twitter=findViewById(R.id.twitter);
+        youtube=findViewById(R.id.youtube);
 
         urlET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -57,16 +60,58 @@ public class MainActivity extends AppCompatActivity {
         fs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,OpenBrower.class);
+                intent.putExtra("url","www.facebook.com");
+                startActivity(intent);
+
 
             }
         });
 
-        yt.setOnClickListener(new View.OnClickListener() {
+        whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,OpenBrower.class);
+                intent.putExtra("url","www.linkedin.com/");
+                startActivity(intent);
 
             }
         });
+
+
+        github.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,OpenBrower.class);
+                intent.putExtra("url","github.com/login");
+                startActivity(intent);
+
+
+            }
+        });
+
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,OpenBrower.class);
+                intent.putExtra("url","twitter.com/i/flow/login");
+                startActivity(intent);
+
+
+            }
+        });
+
+        youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this,OpenBrower.class);
+                intent.putExtra("url","www.youtube.com/");
+                startActivity(intent);
+
+
+            }
+        });
+
 
 
 
